@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Form</title>
+
+	<link rel="stylesheet" type="text/css" href="/resources/style-guide/css/fluig-style-guide.min.css">
+	<script src="/resources/js/jquery/jquery.js"></script>
+	<script src="/resources/js/jquery/jquery-ui.min.js"></script>
+	<script src="/resources/js/mustache/mustache-min.js"></script>
+	<script src="/resources/style-guide/js/fluig-style-guide.min.js"></script>
+
+	<!-- CUSTOM -->
+	<link href="/resources/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css">
+	<link href="/resources/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css">
+	<script src="/resources/style-guide/js/fluig-style-guide-filter.min.js"></script>
+	<script src="/resources/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+	<script type="text/javascript" src="main.js" charset="utf-8"></script>
+
+	<link href='/webdesk/customresources?cid=1&resourceName=temaFormulario/0.css' type='text/css' rel='stylesheet' />
+</head>
+
+<body class="fluig-style-guide">
+
+	<form class="form-horizontal totvs-form grid vertical create-form-components ui-sortable t0" name="createFormComponents"
+	 style="padding-left: 10px; padding-right: 10px;">
+		<h1 class="title-form-application">Comunicado no EZConnect</h1>
+		<div class="form-field" data-type="textarea" data-show-properties="" data-field-name="solicitacao">
+			<input type='text' name='userAtivo' id='userAtivo' class='form-control hide' />
+			<!-- <input type='text' name='solicitante' id='solicitante' class='form-control hide' /> 
+			<input type='text' name='dataSolic' id='dataSolic' class='form-control hide' /> -->
+
+
+			<div class='row'>
+				<div class='col-md-12'>
+					<div class='panel panel-primary'>
+						<div class='panel-heading'>
+							<legend class='panel-title'><a class='collapse-icon up' data-toggle='collapse' id='linkCollapsePrincipal' href='#collapsePrincipal' style='text-decoration: none !important'>DESCRI&Ccedil;&Atilde;O DA SOLICITA&Ccedil;&Atilde;O</a></legend>
+						</div>
+						<div id='collapsePrincipal' class='panel-collapse collapse in'>
+							<div class='panel-body'>
+
+								<div class="row">
+									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+										<div class="">
+											<label class="label-control solicitante">Solicitante<span class="required text-danger"><strong>*</strong></span></label>
+											<input name="solicitante" id="solicitante" class="form-control" type="text" readonly />
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+										<label class="label-control dataSolic">Data da solita&ccedil;&atilde;o<span	class="required text-danger"><strong>*</strong></span></label>
+										<input type="text" name="dataSolic" id="dataSolic" class="form-control" readonly />
+									</div>
+								</div>
+
+								<div class='row' style="margin-top: 1%;">
+									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+										<label class="dataPublicComunic">Data para publicar o comunicado<span	class="required text-danger"><strong>*</strong></span></label>
+										<input type="text" name="dataPublicComunic" id="dataPublicComunic" class="form-control campoData" onblur="validaData()" />
+									</div>
+									<div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+										<label class="chbx">Selecione em qual comunidade deseja publicar<span
+												class="required text-danger"><strong>*</strong></span></label>
+										<br/>
+										<label for='chEztec' class='control-label chbx'>
+										<input type='checkbox' name='chEztec' id='chEztec'  />EZTEC</label>
+										
+										<label for='chEztecEscr' class='control-label chbx' style='margin-left: 4%; '>
+										<input type='checkbox' name='chEztecEscr' id='chEztecEscr' />EZTEC ESCRIT&Oacute;RIO</label>
+										
+										<label for='chEztecObra' class='control-label chbx' style='margin-left: 4%;'>
+										<input type='checkbox' name='chEztecObra' id='chEztecObra' />EZTEC OBRA</label>
+										
+										<label for='chTecVendas' class='control-label chbx' style='margin-left: 4%;'>
+										<input type='checkbox' name='chTecVendas' id='chTecVendas' />TEC VENDAS</label>
+											
+										
+									</div>
+								</div>
+
+								<div class="row" style="margin-top: 1%;">
+									<!-- <div class='col-md-12 col-lg-12 col-sm-12 col-xs-12'>
+										<label class="chbx">Selecione em qual comunidade deseja publicar<span
+												class="required text-danger"><strong>*</strong></span></label>
+										<br/>
+										<label for='chEztec' class='control-label chbx'>
+										<input type='checkbox' name='chEztec' id='chEztec'  />EZTEC</label>
+										
+										<label for='chEztecEscr' class='control-label chbx' style='margin-left: 4%; '>
+										<input type='checkbox' name='chEztecEscr' id='chEztecEscr' />EZTEC ESCRIT&Oacute;RIO</label>
+										
+										<label for='chEztecObra' class='control-label chbx' style='margin-left: 4%;'>
+										<input type='checkbox' name='chEztecObra' id='chEztecObra' />EZTEC OBRA</label>
+										
+										<label for='chTecVendas' class='control-label chbx' style='margin-left: 4%;'>
+										<input type='checkbox' name='chTecVendas' id='chTecVendas' />TEC VENDAS</label>
+											
+										
+									</div> -->
+								</div>
+
+								<div class="row" style="margin-top: 1%">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+										<label class="label-control solicitacao">Descri&ccedil;&atilde;o da solicita&ccedil;&atilde;o</label>
+										<textarea class="form-control solic" rows="4" name="solicitacao" id='solicitacao'
+											placeholder="Descreva aqui seu comunicado na intranet e em breve retornaremos a voc&ecirc;. Caso necess&aacute;rio,anexe arquivos na aba &quot;Anexos&quot;. Acompanhe o status de sua solicita&ccedil;&atilde;o na aba &quot;Complementos&quot;."
+											data-size="big"></textarea>
+										<!--  -->
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div> <!-- Fim do panel nomePanel -->
+
+			<div class='row bloco2'>
+				<div class='col-md-12'>
+					<div class='panel panel-primary'>
+						<div class='panel-heading'>
+							<legend class='panel-title'><a class='collapse-icon up' data-toggle='collapse' id='linkCollapseProcSolic' href='#collapseProcSolic' style='text-decoration: none !important'>PROCESSAR A SOLICITA&Ccedil;&Atilde;O</a></legend>
+						</div>
+						<div id='collapseProcSolic' class='panel-collapse collapse in'>
+							<div class='panel-body'>
+
+								<div class="row">
+									<div class='col-md-12 col-lg-12 col-sm-12 col-xs-12'>
+										<label for='procSolic' class='label-field procSolic'>Deseja finalizar a solicita&ccedil;&atilde;o ou retornar ao solicitante?<span class='required text-danger'><strong>*</strong></span></label>
+										<div class='radio' style='margin-left: 1%;'>
+											<label class="procSolic" ><input type='radio' name='procSolic' id='procSolic' value='Finalizar solicitação'><strong>Finalizar solicita&ccedil;&atilde;o</strong></label>
+											<label class="procSolic" style='margin-left: 10%;  font-weight: normal;'><input type='radio' name='procSolic' id='procSolic' value='Complementar informações (retornar ao solicitante)'><strong>Complementar informa&ccedil;&otilde;es (retornar ao solicitante)</strong></label>
+										</div>
+									</div>
+								</div>
+								<br/>
+								<div class="row justProcSolic">
+									<div class='col-md-10 col-lg-10 col-sm-11 col-xs-11'>
+										<label class="justProcSolic">Justificar<span class='required text-danger'><strong>*</strong></span></label>
+										<textarea rows='3' name='justProcSolic' id='justProcSolic' class='form-control' placeholder="Justificar ao solicitante o motivo do retorno para complementar informa&ccedil;&otilde;es."></textarea>
+									</div>
+								</div>
+								<div class="row  obsProcSolic" style="display: none">
+									<div class='col-md-10 col-lg-10 col-sm-11 col-xs-11'>
+										<label class="obsProcSolic">Observa&ccedil;&atilde;o</label>
+										<textarea rows='3' name='obsProcSolic' id='obsProcSolic' class='form-control'
+											placeholder=""></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div> <!-- Fim do panel PROCESSAR A SOLICITAÃ‡ÃƒO -->
+		
+		</div>
+
+		<!-- HISTORICO -->
+		<div id="div-obs">
+			<div class="row hide" id="div-obsHistorico">
+				
+				<div class="col-md-11 col-lg-11">
+					<div  data-type="textarea" data-show-properties="" data-field-name="obsHistorico">
+						<legend>Observa&ccedil;&otilde;es</legend>
+						<div class="form-group">
+							<label style="display: none;">Observa&ccedil;&otilde;es</label>
+							<textarea style="margin-left: 1%;" name="obsHistorico" id="obsHistorico" class="form-control expand" rows="3"
+								data-size="big" placeholder="Descrever observa&ccedil;&otilde;es"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<legend>&Uacute;ltima atualiza&ccedil;&atilde;o</legend>
+					<textarea name="ultimaAtualizacao" id="ultimaAtualizacao" class="fs-display-none" cols="30"
+						rows="10"></textarea>
+					<div id="dv_ultimaAtualizacao"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<legend></legend>
+					<textarea name="historico" id="historico" class="fs-display-none" cols="30" rows="10"></textarea>
+					<div id="dv_historico"></div>
+				</div>
+			</div>
+			<div class="row" id="btn_view">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<button class="btn btn-primary" id="btn-historico" type="button">Ver mais</button>
+				</div>
+			</div>
+		</div>
+		<!-- FIM HISTORICO -->
+		<br>
+	</form>
+
+	<script type="text/javascript" src="formValidate.js"></script>
+</body>
+
+</html>
